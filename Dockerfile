@@ -3,6 +3,6 @@ MAINTAINER tgxworld "tgx@discourse.org"
 
 RUN gem install docker-api diffy
 
-ADD generate_filebeat_config.rb /src/bin/generate_filebeat_config.rb
+ADD generate_filebeat_config /src/bin/generate_filebeat_config
 
-ENTRYPOINT ["/src/bin/generate_filebeat_config.rb"]
+ENTRYPOINT ["/src/bin/generate_filebeat_config"]
