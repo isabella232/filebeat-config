@@ -43,7 +43,6 @@ def main
       input["fields_under_root"] = true
       input["fields"] ||= {}
       input["fields"]["type"] = type
-      input["ignore_older"] = "1h"
       inputs << input
     end
   end
