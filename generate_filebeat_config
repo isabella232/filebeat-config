@@ -19,6 +19,8 @@ def write_if_changed(path, contents)
     log diff(old_contents, contents) if old_contents
     File.rename(path, "#{path}.old") if file_exists
     File.write(path, contents)
+    FileUtils.chmod(0600, path)
+    FileUtils.chown(1000, 1000, path)
   end
 end
 

@@ -5,8 +5,8 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
-docker build -t discourse/filebeat-config-$1 .
+docker build -t discourse/filebeat-config:$1 .
 
 if [ -n "$PUSH" ]; then
-  docker push discourse/filebeat-config-$1
+  docker push discourse/filebeat-config:$1
 fi
