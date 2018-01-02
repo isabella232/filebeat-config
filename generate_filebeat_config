@@ -34,11 +34,11 @@ def main
       next unless value != ""
       next unless label =~ /\Afilebeat\.([a-z0-9-]+)\.paths\z/
       type = Regexp.last_match[1]
-      input = { "input_type" => 'log' }
+      input = { "type" => 'log' }
 
       if %w{unicorn rails}.include?(type)
         input["multiline"] ||= {}
-        input["multiline"]["pattern"] = "^[[:space:]]|^$"
+        input["multiline"]["pattern"] = "^[[:space:]]|^|^/$"
         input["multiline"]["negate"] = false
         input["multiline"]["match"] = "after"
       end
