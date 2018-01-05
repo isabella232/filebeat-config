@@ -38,8 +38,8 @@ def main
 
       if %w{unicorn rails}.include?(type)
         input["multiline"] ||= {}
-        input["multiline"]["pattern"] = "^[[:space:]]|^|^\/$"
-        input["multiline"]["negate"] = false
+        input["multiline"]["pattern"] = "^\["
+        input["multiline"]["negate"] = true
         input["multiline"]["match"] = "after"
       end
 
