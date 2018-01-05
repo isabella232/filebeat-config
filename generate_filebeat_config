@@ -36,12 +36,13 @@ def main
       type = Regexp.last_match[1]
       input = { "type" => 'log' }
 
-      if %w{unicorn rails}.include?(type)
-        input["multiline"] ||= {}
-        input["multiline"]["pattern"] = '^\['
-        input["multiline"]["negate"] = true
-        input["multiline"]["match"] = "after"
-      end
+      # Disable multiline while I figure out a good pattern
+      # if %w{unicorn rails}.include?(type)
+        # input["multiline"] ||= {}
+        # input["multiline"]["pattern"] = '^\['
+        # input["multiline"]["negate"] = true
+        # input["multiline"]["match"] = "after"
+      # end
 
       input["paths"] = value.split(",")
       input["exclude_files"] = ['.gz$']
