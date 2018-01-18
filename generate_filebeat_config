@@ -59,11 +59,7 @@ def main
     end
   end
 
-  filebeat_config = {
-    "filebeat.prospectors" => inputs,
-  }.to_yaml
-
-  write_if_changed("/shared/app_prospectors.yml", filebeat_config)
+  write_if_changed("/shared/app_prospectors.yml", inputs.to_yaml)
 end
 
 while true do
