@@ -1,2 +1,0 @@
-#!/bin/bash
-docker run -it --rm -v /var/docker/shared:/var/docker/shared  -v /var/run:/var/run -v `pwd`:/shared discourse/filebeat-config ruby /shared/generate_filebeat_config.rb
