@@ -6,7 +6,7 @@ require 'yaml'
 require "diffy"
 
 def log(message)
-  $stderr.puts message
+  $stderr.puts "%s: %s" % [Time.now.utc, message]
 end
 
 def diff(old_contents, contents)
