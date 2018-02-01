@@ -21,6 +21,8 @@ def write_if_changed(path, contents)
     File.write(path, contents)
     FileUtils.chmod(0600, path)
     FileUtils.chown(1000, 1000, path)
+  else
+    log "No change"
   end
 end
 
